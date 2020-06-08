@@ -3,7 +3,7 @@ package com.yuqmettal.voting.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.yuqmettal.voting.model.Employe;
+import com.yuqmettal.voting.model.Employee;
 import com.yuqmettal.voting.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +23,7 @@ public class EmployeDetailService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Employe employe = userRepository.findByUsername(username);
+        Employee employe = userRepository.findByUsername(username);
         List<GrantedAuthority> authorities = employe.getRoles().stream()
 					.map(role -> new SimpleGrantedAuthority(role.getName()))
                     .collect(Collectors.toList());
