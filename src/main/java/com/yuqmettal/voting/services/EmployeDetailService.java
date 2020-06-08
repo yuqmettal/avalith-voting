@@ -1,6 +1,5 @@
 package com.yuqmettal.voting.services;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,14 +24,14 @@ public class EmployeDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Employe employe = userRepository.findByUsername(username);
-        // List<GrantedAuthority> authorities = employe.getRoles().stream()
-		// 			.map(role -> new SimpleGrantedAuthority(role.getName()))
-        //             .collect(Collectors.toList());
+        List<GrantedAuthority> authorities = employe.getRoles().stream()
+					.map(role -> new SimpleGrantedAuthority(role.getName()))
+                    .collect(Collectors.toList());
         return new User(
             employe.getUsername(),
             employe.getPassword(),
             employe.getEnabled(),
-            true, true, true, new ArrayList<>()
+            true, true, true, authorities
         );
     }
     

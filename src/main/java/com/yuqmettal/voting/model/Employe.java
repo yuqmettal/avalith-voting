@@ -41,7 +41,7 @@ public class Employe implements Serializable {
     @Column(unique = true, length = 100)
     private String email;
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "employe_roles", joinColumns = @JoinColumn(name = "employe_id"), inverseJoinColumns = @JoinColumn(name = "role_id"), uniqueConstraints = {
             @UniqueConstraint(columnNames = { "employe_id", "role_id" }) })
     private List<Role> roles;
