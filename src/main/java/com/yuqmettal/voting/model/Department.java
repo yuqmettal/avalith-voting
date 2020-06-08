@@ -16,7 +16,7 @@ public class Department implements Serializable {
     private static final long serialVersionUID = 8081404280503033177L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 	@Column(unique = true, length = 30)
