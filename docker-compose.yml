@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+
+  service-database:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    restart: always
+    environment: 
+      POSTGRES_DB: voting
+      POSTGRES_PASSWORD: d2cb1d0af058c7521c27a3aa5ad78dfd
+
+  # voting-service:
+  #   build: ./
+  #   ports:
+  #     - 80:8080
+  #   depends_on:
+  #     - service-database
