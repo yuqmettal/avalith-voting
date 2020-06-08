@@ -19,7 +19,7 @@ import javax.persistence.UniqueConstraint;
 
 @Entity
 @Table(name = "employes")
-public class Employe implements Serializable {
+public class Employee implements Serializable {
 
     private static final long serialVersionUID = 7686204477673501273L;
 
