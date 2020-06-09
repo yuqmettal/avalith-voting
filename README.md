@@ -1,6 +1,6 @@
-# Sistema de votaccion
+# Sistema de votacion
 
-_Proyecto para votar a empleados de la misma area_
+_Proyecto para votar a empleados_
 
 ## Comenzando 🚀
 
@@ -37,7 +37,7 @@ AVALITH VOTING.postman_collection.json
 
 | Username   |      Password      |  Rol |
 |----------|:-------------:|:------:|
-| admin    |  admin        | $1600 |
+| admin    |  admin        | ADMIN |
 | marco    | marco         |   EMPLOYEE |
 | hugo     | hugo          |    EMPLOYEE |
 | paco     | paco          |    EMPLOYEE |
