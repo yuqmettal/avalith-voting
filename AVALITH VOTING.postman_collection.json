@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "8fe88a13-562e-4729-a9db-c601209761da",
+		"name": "AVALITH VOTING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "EMPLOYEE",
+			"item": [
+				{
+					"name": "LIST EMPLOYEES",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "marco",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "marco",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/employee",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET EMPLOYEE",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "marco",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "marco",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/employee/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employee",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE EMPLOYEE",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"marco2\",\r\n    \"password\": \"password\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/employee/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employee",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "VOTING",
+			"item": [
+				{
+					"name": "VOTE",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "hugo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"areaId\": 3,\r\n    \"employeeId\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/voting",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GETTOPVOTEDBYMONTH",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admin/month/6/top-voted",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"month",
+								"6",
+								"top-voted"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GETTOPVOTEDBYAREA",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/admin/area/3/top-voted",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"area",
+								"3",
+								"top-voted"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
