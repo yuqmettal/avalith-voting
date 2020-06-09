@@ -18,3 +18,6 @@ INSERT INTO roles (name) VALUES ('ROLE_ADMIN');
 INSERT INTO employe_roles (employe_id, role_id) VALUES (1, 1);
 INSERT INTO employe_roles (employe_id, role_id) VALUES (2, 2);
 INSERT INTO employe_roles (employe_id, role_id) VALUES (2, 1);
+INSERT INTO employe_roles (employe_id, role_id) VALUES (3, 1);
+INSERT INTO employe_roles (employe_id, role_id) VALUES (4, 1);
+INSERT INTO employe_roles (employe_id, role_id) VALUES (5, 1);
