@@ -6,8 +6,8 @@ INSERT INTO areas (name) VALUES ('Client satisfaction');
 INSERT INTO areas (name) VALUES ('Motivation');
 INSERT INTO areas (name) VALUES ('Fun');
 
-INSERT INTO employes (username, password, enabled, first_name, last_name, email) VALUES ('marco','$2a$04$Bn3UVpMaH65PWb5yVqial.xFzFgcucvoR5sg4tpA/wbprGFFi7sxm',true, 'Marco', 'Yuquilima','myuquilima@yuqmettal.com');
-INSERT INTO employes (username, password, enabled, first_name, last_name, email) VALUES ('admin','$2a$04$t78hYPjiY2enNx0HwpSK3.aZmDUXArthOcD6a7CbogeKEFY22H7DO',true, 'John', 'Doe','jhon.doe@bolsadeideas.com');
+INSERT INTO employes (username, password, enabled, first_name, last_name, email) VALUES ('marco','$2a$10$O.rvunSHecxX7irLv2vlz.RpMBSKEJtJeHnmy/uURk8nfFmeYGq7K',true, 'Marco', 'Yuquilima','myuquilima@yuqmettal.com');
+INSERT INTO employes (username, password, enabled, first_name, last_name, email) VALUES ('admin','$2a$10$cwPHZMy1YpIZ2hKqpdgRSev2qONVi8ro.98ZAFjvyPUbeKM2ugerK',true, 'John', 'Doe','jhon.doe@bolsadeideas.com');
 
 INSERT INTO roles (name) VALUES ('ROLE_EMPLOYEE');
 INSERT INTO roles (name) VALUES ('ROLE_ADMIN');
