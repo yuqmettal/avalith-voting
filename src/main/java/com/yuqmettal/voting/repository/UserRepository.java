@@ -2,8 +2,8 @@ package com.yuqmettal.voting.repository;
 
 import com.yuqmettal.voting.model.Employee;
 
-import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends PagingAndSortingRepository<Employee, Long> {
+public interface UserRepository extends JpaRepository<Employee, Long> {
     public Employee findByUsername(String username);
 }
