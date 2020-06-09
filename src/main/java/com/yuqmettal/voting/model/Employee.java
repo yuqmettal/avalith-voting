@@ -15,6 +15,9 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+
 @Entity
 @Table(name = "employes")
 public class Employee implements Serializable {
@@ -28,6 +31,7 @@ public class Employee implements Serializable {
     @Column(unique = true, length = 20)
     private String username;
 
+    @JsonProperty(access = Access.WRITE_ONLY)
     @Column(length = 60)
     private String password;
     private Boolean enabled;
