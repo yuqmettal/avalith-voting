@@ -20,7 +20,7 @@ public class EmployeeService {
     
     @Autowired
     private UserRepository userRepository;
-    
+        
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
@@ -30,10 +30,10 @@ public class EmployeeService {
                 .collect(Collectors.toList());
     }
 
-    public Employee create(Employee employee) {
+    public Employee create(Employee employee) throws Exception {
         Employee userEmployee = this.userRepository.findByUsername(employee.getUsername());
         if (userEmployee != null) {
-            throw new RuntimeException("Employee already exist.");
+            throw new Exception("Employee already exist.");
         }
         employee.setEnabled(true);
         employee.setPassword(passwordEncoder.encode(employee.getPassword()));

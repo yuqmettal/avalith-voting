@@ -31,9 +31,13 @@ public class EmployeeControler {
     }
 
     @PostMapping
-    public ResponseEntity<Employee> create(@RequestBody Employee employee) {
-        Employee createdEmployee = this.employeeService.create(employee);
-        return new ResponseEntity<Employee>(createdEmployee, HttpStatus.CREATED);
+    public ResponseEntity<?> create(@RequestBody Employee employee) {
+        try {
+            Employee createdEmployee = this.employeeService.create(employee);
+            return new ResponseEntity<Employee>(createdEmployee, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<String>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 
     @GetMapping("/{id}")
