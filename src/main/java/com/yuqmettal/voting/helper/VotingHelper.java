@@ -10,28 +10,28 @@ import com.yuqmettal.voting.repository.EmployeeRepository;
 import com.yuqmettal.voting.repository.UserRepository;
 import com.yuqmettal.voting.repository.VotedAreaRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class VotingHelper {
-    @Autowired
-    private static AreaRepository areaRepository;
+    private AreaRepository areaRepository;
+    private EmployeeRepository employeeRepository;
+    private UserRepository userRepository;
+    private VotedAreaRepository votedAreaRepository;
 
-    @Autowired
-    private static EmployeeRepository employeeRepository;
+    public VotingHelper(AreaRepository areaRepository, EmployeeRepository employeeRepository,
+            UserRepository userRepository, VotedAreaRepository votedAreaRepository) {
+        this.areaRepository = areaRepository;
+        this.employeeRepository = employeeRepository;
+        this.userRepository = userRepository;
+        this.votedAreaRepository = votedAreaRepository;
+    }
 
-    @Autowired
-    private static UserRepository userRepository;
-
-    @Autowired
-    private static VotedAreaRepository votedAreaRepository;
-
-    public static VotingStatus validate(VoteEntity vote) {
-        if (!areaRepository.existsById(vote.getAreaId())) {
+    public VotingStatus validate(VoteEntity vote) {
+        if (vote.getAreaId() == null || !areaRepository.existsById(vote.getAreaId())) {
             return VotingStatus.AreaDoesNotExists;
         }
-        if (!employeeRepository.existsById(vote.getEmployeeId())) {
+        if (vote.getEmployeeId() == null || !employeeRepository.existsById(vote.getEmployeeId())) {
             return VotingStatus.EmployeeDoesNotExists;
         }
 
@@ -41,11 +41,11 @@ public class VotingHelper {
             return VotingStatus.OwnVoteError;
         }
 
-        Area area = areaRepository.getOne(vote.getAreaId());
+        Area area = areaRepository.findById(vote.getAreaId()).get();
         Calendar calendar = Calendar.getInstance();
         int month = calendar.get(Calendar.MONTH);
         int year = calendar.get(Calendar.YEAR);
-        if(votedAreaRepository.existsByAreaAndVoterAndYearAndMonth(area, user, year, month)){
+        if (votedAreaRepository.existsVotedAreaByAreaAndVoterAndYearAndMonth(area, user, year, month)) {
             return VotingStatus.AlreadyVoted;
         }
 

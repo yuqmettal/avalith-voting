@@ -64,4 +64,11 @@ public class VotedArea {
         this.month = month;
     }
 
+    public VotedArea(Area area, Employee voter, int year, int month) {
+        this.area = area;
+        this.voter = voter;
+        this.year = year;
+        this.month = month;
+    }
+
 }

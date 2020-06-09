@@ -8,6 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface VotedAreaRepository extends JpaRepository<VotedArea, Long> {
 
-    Boolean existsByAreaAndVoterAndYearAndMonth(Area area, Employee voter, int year, int month);
+    Boolean existsVotedAreaByAreaAndVoterAndYearAndMonth(Area area, Employee voter, int year, int month);
     
 }
