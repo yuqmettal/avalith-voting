@@ -73,5 +73,12 @@ public class Vote {
     public void setComment(String comment) {
         this.comment = comment;
     }
-    
+
+    public Vote(Area area, Employee employee, String comment) {
+        this.date = new Date();
+        this.area = area;
+        this.employee = employee;
+        this.comment = comment;
+    }
+
 }
